@@ -28,12 +28,7 @@ router.get("/", async function(req,res,next){
 
       order: [["createdAt", "DESC"]]
     });
-    const comments = await Comments.findAll({
-      include: [{
-        model: User,
-        attributes: ["firstName","lastName"]
-      }]
-    })
+    
     res.json(posts) 
 })
 
